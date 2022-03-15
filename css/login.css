@@ -3,9 +3,9 @@ body {
     background-image: url("../img/login_background.jpg");
 }
 
-.container {
+.login-container {
     width: 380px;
-    margin:10% auto;
+    margin: 10% auto;
     border-radius: 25px;
     background-color: rgba(0,0,0,0.5);
     box-shadow: 0 0 15px #333;
