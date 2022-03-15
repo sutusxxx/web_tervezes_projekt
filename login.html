@@ -4,13 +4,27 @@
 <head>
     <title>Bejelentkezés</title>
     <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<h1>Bejelentkezés</h1>
-<form method="POST">
-    <input type="text" name="username" placeholder="Felhasználónév..." required/> <br/><br/>
-    <input type="password" name="passwd" placeholder="Jelszó..." required/> <br/><br/>
-    <input type="submit" value="Bejelentkezés"/>
-</form>
+    <div class="container">
+        <div class="header">
+            <h1>Jelentkezz be!</h1>
+        </div>
+        <div class="main">
+            <form>
+                <span>
+                    <i class="fa fa-user"></i>
+                    <input type="text" placeholder="Felhasználónév" name="username" required>
+                </span><br>
+                <span>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="Jelszó" name="password" required>
+                </span><br>
+                <button>Bejelentkezés</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
