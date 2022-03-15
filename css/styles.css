@@ -12,6 +12,8 @@ body {
 .menu-bar {
     background-image: url("../img/banner.jpg");
     text-align: center;
+    overflow: hidden;
+    background-size: contain;
 }
 
 .menu-bar ul {
@@ -34,6 +36,7 @@ body {
 .active, .menu-bar ul li:hover {
     background: #d99c48;
     border-radius: 3px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
 .icon {
