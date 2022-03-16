@@ -22,11 +22,11 @@ body {
     margin-bottom: 80px;
 }
 
-.main {
+.login-inputs {
     text-align: center;
 }
 
-.main input, button {
+.login-inputs input, button {
     width: 300px;
     height: 40px;
     border: none;
@@ -38,7 +38,7 @@ body {
     margin-bottom: 40px;
 }
 
-.main button {
+.login-inputs button {
     padding-left: 0;
     background-color: #f3b475;
     letter-spacing: 1px;
@@ -46,21 +46,21 @@ body {
     margin-bottom: 50px;
 }
 
-.main button:hover {
+.login-inputs button:hover {
     box-shadow: 2px 2px 5px #555;
     background-color: #d39c72;
 }
 
-.main input:hover {
+.login-inputs input:hover {
     box-shadow: 2px 2px 5px #555;
     background-color: #ddd;
 }
 
-.main span {
+.login-inputs span {
     position:relative;
 }
 
-.main i {
+.login-inputs i {
     position: absolute;
     left: 15px;
     color: #333;

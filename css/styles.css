@@ -6,7 +6,7 @@
 
 body {
     background-color: rgb(214, 214, 214);
-    font-family: sans-serif; 
+    font-family: sans-serif;
 }
 
 .page-title {
@@ -55,6 +55,10 @@ body {
     font-size: 30px;
 }
 
+.content {
+    height: 1000px;
+}
+
 footer * {
     margin: 0;
     padding: 0;
@@ -62,18 +66,22 @@ footer * {
 }
 
 footer > div {
-    max-width: 1170px;
+    max-width: 1000px;
     margin: auto;
-}
-
-footer {
-    background-color: #24262b;
-    padding: 20px 0;
 }
 
 .footer-row {
     display: flex;
     flex-wrap: wrap;
+}
+
+footer {
+    background-color: #24262b;
+    padding: 40px 0;
+}
+
+ul {
+    list-style: none;
 }
 
 .footer-list {
@@ -83,10 +91,6 @@ footer {
 .footer-col {
     width: 25%;
     padding: 0 15px;
-}
-
-ul {
-    list-style: none;
 }
 
 .footer-col h4 {
