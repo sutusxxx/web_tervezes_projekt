@@ -1,8 +1,3 @@
-body {
-    font-family: sans-serif;
-    background-image: url("../img/login_background.jpg");
-}
-
 .login-container {
     width: 380px;
     margin: 10% auto;
@@ -19,7 +14,7 @@ body {
 .header h1 {
     color: ghostwhite;
     font-size: 45px;
-    margin-bottom: 80px;
+    margin-bottom: 70px;
 }
 
 .login-inputs {
@@ -38,7 +33,11 @@ body {
     margin-bottom: 40px;
 }
 
-.login-inputs button {
+.login-inputs button, a {
+    cursor: pointer;
+}
+
+.login-button {
     padding-left: 0;
     background-color: #f3b475;
     letter-spacing: 1px;
@@ -46,7 +45,7 @@ body {
     margin-bottom: 50px;
 }
 
-.login-inputs button:hover {
+.login-button:hover {
     box-shadow: 2px 2px 5px #555;
     background-color: #d39c72;
 }
