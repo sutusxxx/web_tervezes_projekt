@@ -81,9 +81,40 @@ article p {
     margin-top: 16px;
     line-height: 24px;
 }
+.content {
+    background-color: #383838;
+    padding: 40px;
+    border-radius: 20px;
+}
 
 .bold {
     font-weight: bold;
+}
+
+table {
+    border : 3px solid #383838;
+    border-collapse: collapse;
+    background-color: rgb(255, 217, 182);
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+th, td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px;
+}
+
+th {
+    background-color: #383838;
+    color: white;
+}
+tr:hover { 
+    background-color: #f3b475;
 }
 
 /* Footer styles */
