@@ -8,21 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-<nav id="navbar">
-    <div class="menu-bar">
-        <ul>
-            <li><a href="index_page.html"><i class="icon fa fa-home"></i><br>Kezdőlap</a></li>
-            <li><a href="pizzas_page.html"><i class="icon fa fa-pizza-slice"></i><br>Pizzák</a></li>
-            <li><a href="burgers_page.html"><i class="icon fa fa-burger"></i><br>Burgerek</a></li>
-            <li><a href="meals_page.html"><i class="icon fa fa-bacon"></i><br>Sültek</a></li>
-            <li><a href="desserts_page.html"><i class="icon fa fa-cake"></i><br>Desszert</a></li>
-            <li><a href="drinks_page.html"><i class="icon fa fa-glass-whiskey"></i><br>Italok</a></li>
-            <li><a href="cart_page.html"><i class="icon fa fa-shopping-cart"></i><br>Kosár</a></li>
-            <li><a href="contacts_page.html"><i class="icon fa fa-phone"></i><br>Kapcsolat</a></li>
-            <li><a href="login_page.html"><i class="icon fa fa-user-lock"></i><br>Bejelentkezés</a></li>
-        </ul>
-    </div>
-</nav>
+<?php include_once "header.php"?>
 <main>
     <article>
         <h2>Adatvédelmi nyilatkozat</h2>
@@ -68,24 +54,6 @@
         </p>
     </article>
 </main>
-<footer>
-    <div>
-        <div class="footer-row">
-            <div class="footer-col">
-                <h4>rólunk</h4>
-                <ul>
-                    <li><a href="contacts_page.html">kapcsolat</a></li>
-                    <li><a href="privacy_policy.html">adatvédelmi nyilatkozat</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>segítség</h4>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
+<?php include_once "footer.html"?>
 </body>
 </html>
