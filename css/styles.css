@@ -12,47 +12,100 @@ body {
 /* Menu bar styles */
 
 #navbar {
-    display: block;
-    position: fixed;
     width: 100%;
+    height: 80px;
+    display: flex;
     background-color: #383838;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px 0px 100px;
 }
 
-.menu-bar {
-    text-align: center;
-    overflow: hidden;
-    background-size: contain;
-}
-
-.menu-bar ul {
-    display: inline-flex;
+nav ul {
+    position: fixed;
+    display: flex;
     list-style: none;
     color: #fff;
 }
 
-.menu-bar ul li {
-    width: 120px;
+nav ul li {
     margin: 15px;
-    padding: 15px;
+    padding: 0px 5px;
     opacity: 0.9;
-    transition: 0.5s;
+    transition: all 0.5s ease;
 }
 
-.menu-bar ul li a {
+nav ul li a {
     text-decoration: none;
     color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 8px 10px;
+    border-radius: 5px;
 }
 
-.active, .menu-bar ul li:hover {
+.active, nav ul li:hover {
     background: #f3b475;
     border-radius: 3px;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
     opacity: 1;
 }
 
-@media (max-width: 800px) {
-    .menu-bar {
-        display: none;
+nav .menu-btn i {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    
+}
+
+#click {
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    nav ul {
+        position:absolute;
+        background-color: #383838;
+        top: 80px;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    #click:checked ~ .menu-btn i:before {
+        content: "\f00d";
+    }
+
+    #click:checked ~ ul {
+        left: 0%
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+    nav ul li a {
+        font-size: 20px;
+        display: block;
+    }
+
+    .active, nav ul li:hover {
+        border-radius: 0px;
+        box-shadow: none;
+        background: none;
+    }
+
+    .active > a, nav ul li a:hover {
+        color: #f3b475;
+    }
+
+    nav .menu-btn i {
+        display: block;
     }
 }
 
