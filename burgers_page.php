@@ -58,7 +58,7 @@
                 <td>Bacon burger</td>
                 <td>3200ft</td>
                 <td>(marhahús mediumra sütve, karamellizált hagyma, uborka, saláta, paradicsom, BBQ szósz, cheddar sajt, baconszalonna, tükörtojás)</td>
-                <td><a href="cart_page.html"><img src="img/maradek.jpg" alt="Bacon burger" title="Bacon burger" width="150"></a></td>
+                <td><a href="cart_page.html"><img src="img/baconburger.jpg" alt="Bacon burger" title="Bacon burger" width="150"></a></td>
             </tr>
             <tr>
                 <td>XXL burger</td>
