@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-<?php include_once "header.php"?>
+<?php include_once "common/header.php"?>
 <main>
     <h1>Üdvözöljük honlapunkon!</h1>
     <p>Kérjük értékelje honlapunkat!</p>
@@ -18,6 +18,6 @@
         <input type="submit">
     </form>
 </main>
-<?php include_once "footer.html"?>
+<?php include_once "common/footer.html"?>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-<?php include_once "header.php"?>
+<?php include_once "common/header.php"?>
 <main>
     <div class="content">
         <table>
@@ -44,7 +44,7 @@
 </main>
 <footer>
     <div>
-        <div class="footer-row">
+        <div class="common/footer-row">
             <div class="footer-col">
                 <h4>rólunk</h4>
                 <ul>

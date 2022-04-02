@@ -9,14 +9,14 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-<?php include_once "header.php"?>
+<?php include_once "common/header.php"?>
 <main>
     <div class="login-container">
         <div class="header">
             <h1>Jelentkezz be!</h1>
         </div>
-        <div class="login-inputs">
-            <form>
+        <form>
+            <div class="login-inputs">
                 <span>
                     <i class="fa fa-user"></i>
                     <input type="text" placeholder="Felhasználónév" name="username" required>
@@ -26,10 +26,11 @@
                     <input type="password" placeholder="Jelszó" name="password" required>
                 </span><br>
                 <button class="login-button">Bejelentkezés</button>
-            </form>
-        </div>
+                <lu class="registration-button"><li><a href="registration.php"><br>Regisztráció</a></li></lu>
+            </div>
+        </form>
     </div>
 </main>
-<?php include_once "footer.html"?>
+<?php include_once "common/footer.html"?>
 </body>
 </html>

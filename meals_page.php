@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<?php include_once "header.php"?>
+<?php include_once "common/header.php"?>
 <main>
     <div class="content">
         <table>
@@ -94,7 +94,7 @@
         </table>
     </div>
 </main>
-<?php include_once "footer.html"?>
+<?php include_once "common/footer.html"?>
 </body>
 
 </html>
