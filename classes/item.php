@@ -11,4 +11,15 @@ class Item {
     }
 
     //TODO GETTER & SETTER
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function getPrice() {
+        return $this->price;
+    }
 }

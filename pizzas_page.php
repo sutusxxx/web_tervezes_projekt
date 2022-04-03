@@ -28,13 +28,13 @@
             <?php foreach ($itemList as $item) { ?>
             <tr>
                 <td>
-                    <b><?php echo $item->getName(); ?></b>
+                    <b><?php echo $item['name']; ?></b>
                 </td>
                 <td>
-                    <b><?php echo $item->getDescription(); ?></b>
+                    <b><?php echo $item['description']; ?></b>
                 </td>
                 <td>
-                    <b><?php echo $item->getPrice() . " Ft"; ?></b>
+                    <b><?php echo $item['price'] . " Ft"; ?></b>
                 </td>
                 <td>
                     <button onclick="addToCart()">Korásba</button>
