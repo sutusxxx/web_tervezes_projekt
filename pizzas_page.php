@@ -37,7 +37,7 @@
                     <b><?php echo $item['price'] . " Ft"; ?></b>
                 </td>
                 <td>
-                    <button onclick="addToCart()">Korásba</button>
+                    <button class="add-to-cart-btn" onclick="addToCart()"><i class="fas fa-cart-plus"></i></button>
                 </td>
             </tr>
             <?php } ?>

@@ -25,7 +25,7 @@
             <input type="email" name="email" id="email" required><br>
             <div class="checkbox-container">
                 <label>
-                     <input type="checkbox" required>
+                     <input type="checkbox" name="conditions" required>
                      Elfogadom a felhasználási feltételeket és az <a href="privacy_policy.php">adatvédelmi nyilatkozatot</a>!   
                 </label>
                 <label>

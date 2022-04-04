@@ -1,6 +1,7 @@
 <?php
+    require_once('common/connectDB.php');
 
-function loadItems(string $fileName): array {
+function loadItems(string $type): array {
     // $file = fopen($fileName, "r");
     // $data = [];
 
@@ -15,11 +16,9 @@ function loadItems(string $fileName): array {
 
     // fclose($file);
     // return $data;
-    require_once('common/connectDB.php');
-    require_once('classes/item.php');
     $query = "SELECT * FROM items";
 
-    $response = @mysqli_query($connection, $query);
+    $response = @mysqli_query($GLOBALS["connection"], $query);
 
     $items = [];
     if ($response) {
