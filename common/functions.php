@@ -17,8 +17,8 @@ function loadItems(string $type): array {
     // fclose($file);
     // return $data;
     $query = "SELECT * FROM items";
-
-    $response = @mysqli_query($GLOBALS["connection"], $query);
+    global $connection;
+    $response = @mysqli_query($connection, $query);
 
     $items = [];
     if ($response) {

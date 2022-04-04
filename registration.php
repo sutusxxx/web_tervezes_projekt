@@ -14,7 +14,7 @@
         <h1>Regisztrálj az oldalra!</h1>
     </header>
     <div class="registration-container">
-        <form action='common/connectDB.php' method="POST">
+        <form action='common/registration.php' method="POST">
             <label>Felhasználónév:</label>
             <input type="text" name="username" id="username" required><br>
             <label>Jelszó:</label>
@@ -22,14 +22,21 @@
             <label>Jelszó megerősítése:</label>
             <input type="password" name="confirmPassword" id="confirmPassword" required><br>
             <label>E-mail cím:</label>
-            <input type="email" name="email" id="email" required><br>
+            <input type="email" name="email" id="email" required>
+            <br>
+            <label>Születési dátum:</labe>
+            <input type="date" name="dateOfBirth" id="dateOfBirth" required><br>
+            Nem:
+            <label><input type="radio" name="gender" value="M"/>Férfi</label>
+            <label><input type="radio" name="gender" value="F"/>Nő</label>
             <div class="checkbox-container">
                 <label>
                      <input type="checkbox" name="conditions" required>
-                     Elfogadom a felhasználási feltételeket és az <a href="privacy_policy.php">adatvédelmi nyilatkozatot</a>!   
+                     Elfogadom a <a href="terms_and_conditions.php"> felhasználási feltételeket</a> és az <a href="privacy_policy.php">adatvédelmi nyilatkozatot</a>!   
                 </label>
+                <br>
                 <label>
-                     <input type="checkbox">
+                     <input type="checkbox"> Feliratkozás hírlevélre.
                 </label>
             </div>
             <input type="submit" name="submit" id="submit" value="Regisztráció">
