@@ -15,7 +15,7 @@
         <div class="header">
             <h1>Jelentkezz be!</h1>
         </div>
-        <form>
+        <form action="auth/sign_in.php">
             <div class="login-inputs">
                 <span>
                     <i class="fa fa-user"></i>

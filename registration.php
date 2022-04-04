@@ -14,7 +14,7 @@
         <h1>Regisztrálj az oldalra!</h1>
     </header>
     <div class="registration-container">
-        <form action='common/registration.php' method="POST">
+        <form action='auth/sign_up.php' method="POST">
             <label>Felhasználónév:</label>
             <input type="text" name="username" id="username" required><br>
             <label>Jelszó:</label>
