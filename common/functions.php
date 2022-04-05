@@ -1,5 +1,5 @@
 <?php
-    require_once('common/connectDB.php');
+    require_once('connectDB.php');
 
 function loadItems(string $type): array {
     // $file = fopen($fileName, "r");
@@ -27,4 +27,31 @@ function loadItems(string $type): array {
         }
     }
     return $items;
+}
+
+function loadUsers(): array {
+    $result = [];
+    try {
+        $sql = "SELECT username FROM users";
+        global $db;
+        $rs = $db->query($sql);
+        foreach($rs as $row) {
+            $result[] = $row;
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    return $result;
+}
+
+function saveUser($user) {
+    global $db;
+    $sql = "INSERT INTO users (username, password, email, date_of_birth, gender) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $db->prepare($sql);
+    $result = $stmt->execute([$user['username'], $user['password'], $user['email'], $user['dateOfBirth'], $user['gender']]);
+    if($result) {
+        header("Location: http://localhost/login_page.php");
+    } else {
+        echo 'User save failed!';
+    }
 }
