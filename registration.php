@@ -36,7 +36,7 @@
                 </label>
                 <br>
                 <label>
-                     <input type="checkbox"> Feliratkozás hírlevélre.
+                     <input type="checkbox"> Iratkozz fel a hírlevélre.
                 </label>
             </div>
             <input type="submit" name="submit" id="submit" value="Regisztráció">

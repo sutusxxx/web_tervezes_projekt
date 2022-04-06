@@ -11,16 +11,16 @@ if (isset($_POST['submit'])) {
         $errors[] = "A jelszó megadása kötelező!";
 
     if (!isset($_POST['email']) || trim($_POST['email']) === '')
-        $error[] = "Az email cím megadása kötelező!";
+        $errors[] = "Az email cím megadása kötelező!";
 
     if (!isset($_POST['gender']) || trim($_POST['gender']) === '')
-        $error[] = "Az nem cím megadása kötelező!";
+        $errors[] = "Az nem cím megadása kötelező!";
         
     if (!isset($_POST['conditions']) || trim($_POST['conditions']) === '')
-        $error[] = "A feltételek elfogadása kötelező!";
+        $errors[] = "A feltételek elfogadása kötelező!";
 
-    if (trim($_POST['password']) !== trim($_POST['confirmPassword'])) {
-        $error[] = "A jelszó és a jelszó megerősítése nem egyezik!";
+    if ($_POST['password'] !== $_POST['confirmPassword']) {
+        $errors[] = "A jelszó és a jelszó megerősítése nem egyezik!";
     }
 
     foreach($users as $user) {
@@ -29,8 +29,9 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    $username = trim($_POST['username']);
+    $username = strtolower(trim($_POST['username']));
     $password = $_POST['password'];
+    $confirmPassword = $_POST['confirmPassword'];
     $email = $_POST['email'];
     $dateOfBirth = $_POST['dateOfBirth'];
     $gender = $_POST['gender'];

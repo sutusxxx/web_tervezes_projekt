@@ -15,7 +15,7 @@
         <div class="header">
             <h1>Jelentkezz be!</h1>
         </div>
-        <form action="auth/sign_in.php">
+        <form action="auth/sign_in.php" method="POST">
             <div class="login-inputs">
                 <span>
                     <i class="fa fa-user"></i>
@@ -25,7 +25,7 @@
                     <i class="fa fa-lock"></i>
                     <input type="password" placeholder="Jelszó" name="password" required>
                 </span><br>
-                <button class="login-button">Bejelentkezés</button>
+                <button type="submit" name="submit" class="login-button">Bejelentkezés</button>
                 <lu class="registration-button"><li><a href="registration.php"><br>Regisztráció</a></li></lu>
             </div>
         </form>

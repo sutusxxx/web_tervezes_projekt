@@ -30,26 +30,25 @@ function loadItems(string $type): array {
 }
 
 function loadUsers(): array {
-    $result = [];
-    try {
-        $sql = "SELECT username FROM users";
-        global $db;
-        $rs = $db->query($sql);
-        foreach($rs as $row) {
-            $result[] = $row;
+    $query = "SELECT username, password FROM users";
+    global $connection;
+    $response = @mysqli_query($connection, $query);
+    $users = [];
+    if ($response) {
+        while($row = mysqli_fetch_array($response)) {
+            $users[] = $row;
         }
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
     }
-    return $result;
+    return $users;
 }
 
 function saveUser($user) {
-    global $db;
-    $sql = "INSERT INTO users (username, password, email, date_of_birth, gender) VALUES (?, ?, ?, ?, ?)";
-    $stmt = $db->prepare($sql);
-    $result = $stmt->execute([$user['username'], $user['password'], $user['email'], $user['dateOfBirth'], $user['gender']]);
-    if($result) {
+    global $connection;
+    $query =  "INSERT INTO users (username, password, email, date_of_birth, gender) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("sssss", $user['username'], $user['password'], $user['email'], $user['dateOfBirth'], $user['gender']);
+    $result = $stmt->execute();
+    if ($result) {
         header("Location: http://localhost/login_page.php");
     } else {
         echo 'User save failed!';
