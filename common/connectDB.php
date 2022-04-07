@@ -22,6 +22,6 @@ CREATE TABLE items (
     name VARCHAR(30),
     description VARCHAR(60),
     price int,
-    type VARCHAR(30))
+    type VARCHAR(30)
 );
 -->

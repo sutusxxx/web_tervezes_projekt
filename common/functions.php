@@ -2,31 +2,21 @@
     require_once('connectDB.php');
 
 function loadItems(string $type): array {
-    // $file = fopen($fileName, "r");
-    // $data = [];
-
-    // if (!$file) {
-    //     die("Couldn't load the file!");
-    // }
-
-    // while(($row = fgets($file)) !== false) {
-    //     $rowData = unserialize($row);
-    //     $data[] = $rowData;
-    // }
-
-    // fclose($file);
-    // return $data;
-    $query = "SELECT * FROM items";
-    global $connection;
-    $response = @mysqli_query($connection, $query);
-
-    $items = [];
-    if ($response) {
-        while($row = mysqli_fetch_array($response)) {
-            $items[] = $row;
+    if ($type) {
+        global $connection;
+        $query = "SELECT * FROM items WHERE type=?";
+        $stmt = $connection->prepare($query);
+        $stmt->bind_param("s", $type);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $items = [];
+        if ($result) {
+            while($row = $result->fetch_assoc()) {
+                $items[] = $row;
+            }
         }
+        return $items;
     }
-    return $items;
 }
 
 function loadUsers(): array {

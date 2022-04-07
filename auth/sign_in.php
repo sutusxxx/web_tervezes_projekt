@@ -1,6 +1,8 @@
 <?php
 require_once('../common/functions.php');
 require_once('../classes/user.php');
+
+session_start();
 $users = loadUsers();
 $message = "";
 
@@ -18,6 +20,7 @@ if(isset($_POST["submit"])) {
         foreach ($users as $user) {
             if ($user["username"] === $username && password_verify($password, $user["password"])) {
                 $message = "Sikeres belépés!";
+                $_SESSION["user"] = $user;
                 header("Location: http://localhost/index.php");
             }
         }

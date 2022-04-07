@@ -19,7 +19,7 @@
             <div class="login-inputs">
                 <span>
                     <i class="fa fa-user"></i>
-                    <input type="text" placeholder="Felhasználónév" name="username" required>
+                    <input type="text" placeholder="Felhasználónév" name="username" autocomplete="off" required>
                 </span><br>
                 <span>
                     <i class="fa fa-lock"></i>

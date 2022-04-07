@@ -16,13 +16,13 @@
     <div class="registration-container">
         <form action='auth/sign_up.php' method="POST">
             <label>Felhasználónév:</label>
-            <input type="text" name="username" id="username" required><br>
+            <input type="text" name="username" id="username" autocomplete="off" required><br>
             <label>Jelszó:</label>
             <input type="password" name="password" id="password" required><br>
             <label>Jelszó megerősítése:</label>
             <input type="password" name="confirmPassword" id="confirmPassword" required><br>
             <label>E-mail cím:</label>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" id="email" autocomplete="off" required>
             <br>
             <label>Születési dátum:</labe>
             <input type="date" name="dateOfBirth" id="dateOfBirth" required><br>

@@ -13,11 +13,12 @@
 
     include_once "common/header.php";
 
-    $itemList = loadItems("data/testItemsForPizzaPage.txt")
+    $itemList = loadItems("pizza");
 
 ?>
 <main>
     <div class="content">
+        <?php if (count($itemList) > 0) { ?>
         <table>
             <tr>
                 <th>Pizza neve</th>
@@ -41,6 +42,9 @@
                 </td>
             </tr>
             <?php } ?>
+        <?php } else { ?>
+            :(
+        <?php } ?>
 <!-- 
             <tr>
                 <td>Margherita</td>

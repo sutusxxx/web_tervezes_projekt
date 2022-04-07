@@ -1,5 +1,6 @@
 <?php
     $page = basename($_SERVER['PHP_SELF']);
+    session_start();
 ?>
 <nav>
     <input type="checkbox" id="click">
@@ -15,6 +16,10 @@
         <li <?php if($page == 'drinks_page.php'){ echo ' class="active"';}?>><a href="drinks_page.php"><i class="icon fa fa-glass-whiskey"></i><br>Italok</a></li>
         <li <?php if($page == 'cart_page.php'){ echo ' class="active"';}?>><a href="cart_page.php"><i class="icon fa fa-shopping-cart"></i><br>Kosár</a></li>
         <li <?php if($page == 'contacts_page.php'){ echo ' class="active"';}?>><a href="contacts_page.php"><i class="icon fa fa-phone"></i><br>Kapcsolat</a></li>
+    <?php if (isset($_SESSION["user"])) { ?>
+        <li <?php if($page == 'login_page.php'){ echo ' class="active"';}?>><a href="auth/logout.php"><i class="icon fa fa-user-lock"></i><br>Kijelentkezés</a></li>
+    <?php } else { ?>
         <li <?php if($page == 'login_page.php'){ echo ' class="active"';}?>><a href="login_page.php"><i class="icon fa fa-user-lock"></i><br>Belépés</a></li>
+    <?php } ?>
     </ul>
 </nav>
