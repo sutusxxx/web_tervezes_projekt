@@ -8,7 +8,7 @@
         <i class="fas fa-bars"></i>
     </label>
     <ul>
-        <li <?php if($page == 'index.php'){ echo ' class="active"';}?>><a href="index.php"><i class="icon fa fa-home"></i><br>Kezdőlap</a></li>
+        <li <?php if($page == 'profile.php'){ echo ' class="active"';}?>><a href="profile.php"><i class="icon fa fa-home"></i><br>Profil</a></li>
         <li <?php if($page == 'pizzas_page.php'){ echo ' class="active"';}?>><a href="pizzas_page.php"><i class="icon fa fa-pizza-slice"></i><br>Pizzák</a></li>
         <li <?php if($page == 'burgers_page.php'){ echo ' class="active"';}?>><a href="burgers_page.php"><i class="icon fa fa-burger"></i><br>Burgerek</a></li>
         <li <?php if($page == 'meals_page.php'){ echo ' class="active"';}?>><a href="meals_page.php"><i class="icon fa fa-bacon"></i><br>Sültek</a></li>
@@ -19,7 +19,7 @@
     <?php if (isset($_SESSION["user"])) { ?>
         <li <?php if($page == 'login_page.php'){ echo ' class="active"';}?>><a href="auth/logout.php"><i class="icon fa fa-user-lock"></i><br>Kijelentkezés</a></li>
     <?php } else { ?>
-        <li <?php if($page == 'login_page.php'){ echo ' class="active"';}?>><a href="login_page.php"><i class="icon fa fa-user-lock"></i><br>Belépés</a></li>
+        <li <?php if($page == 'index.php'){ echo ' class="active"';}?>><a href="index.php"><i class="icon fa fa-user-lock"></i><br>Belépés</a></li>
     <?php } ?>
     </ul>
 </nav>

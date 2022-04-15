@@ -1,6 +1,6 @@
 <?php
 require_once('../common/functions.php');
-require_once('../classes/user.php');
+// require_once('../classes/user.php');
 $users = loadUsers();
 $errors = [];
 if (isset($_POST['submit'])) {
@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 
     if (!isset($_POST['gender']) || trim($_POST['gender']) === '')
         $errors[] = "Az nem cím megadása kötelező!";
-        
+
     if (!isset($_POST['conditions']) || trim($_POST['conditions']) === '')
         $errors[] = "A feltételek elfogadása kötelező!";
 
