@@ -1,0 +1,38 @@
+.profile-container {
+    background-color: rgba(100, 35, 16, 0.5);
+    text-align: center;
+    padding: 40px 40px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #333;
+    color: ghostwhite;
+    font-size: 20px;
+    width: 50%;
+    margin: auto;
+}
+
+.avatar {
+    position: relative;
+}
+
+.avatar img {
+    width: 150px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 6px;
+
+}
+
+.edit-btn {
+    padding-left: 0;
+    background-color: #333;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .profile-container {
+        width: 100%;
+    }
+}

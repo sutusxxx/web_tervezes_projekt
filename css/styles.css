@@ -58,7 +58,7 @@ nav .menu-btn i {
     font-size: 30px;
     cursor: pointer;
     display: none;
-    
+
 }
 
 #click {
@@ -234,8 +234,8 @@ ul {
         position: static;
     }
 
-    nav li { 
-        float: none; 
+    nav li {
+        float: none;
         width: 100%;
     }
 
@@ -254,7 +254,7 @@ ul {
     }
 
     nav .menu-btn i {
-        padding: 10px 20px; 
+        padding: 10px 20px;
         display: block;
     }
 
