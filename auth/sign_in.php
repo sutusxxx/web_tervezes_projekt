@@ -21,9 +21,12 @@ if(isset($_POST["submit"])) {
             if ($user["username"] === $username && password_verify($password, $user["password"])) {
                 $message = "Sikeres belépés!";
                 $_SESSION["user"] = $user;
+                $_SESSION['login'] = $message;
                 header("Location: http://localhost/profile.php");
+            } else {
+                $_SESSION['login'] = $message;
+                header("Location: http://localhost/index.php");
             }
         }
     }
-    echo($message);
 }
