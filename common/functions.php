@@ -1,8 +1,6 @@
 <?php
 require_once('connectDB.php');
 
-session_start();
-
 function loadItems(string $type): array {
     if ($type) {
         global $connection;
@@ -41,11 +39,8 @@ function saveUser($user) {
     $stmt->bind_param("sssss", $user['username'], $user['password'], $user['email'], $user['dateOfBirth'], $user['gender']);
     $result = $stmt->execute();
     if ($result) {
-        $_SESSION['registrationSuccess'] = "Sikeres regisztráció!";
         header("Location: http://localhost/index.php");
     } else {
         echo 'User save failed!';
     }
 }
-
-session_abort();

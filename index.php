@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (isset($_SESSION['user'])) {
+        header("Location: http://localhost/profile.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -11,34 +17,13 @@
 <body>
 <?php include_once "common/header.php"?>
 <main>
-    <?php
-    if (isset($_SESSION['user'])) {
-        header("Location: http://localhost/profile.php");
-    }
-    if (isset($_SESSION['login'])) { ?>
-    <div class="alert show">
-        <span class="fas fa-exclamation-circle"></span>
-        <span class="msg"><?php echo $_SESSION['login']; ?></span>
-        <span class="close-btn">
-            <span class="fas fa-times"></span>
-        </span>
+    <div class="status">
+        <?php if (isset($_SESSION['status'])) {
+            echo $_SESSION['status'];
+        }
+        unset($_SESSION['status']);
+        ?>
     </div>
-    <?php
-    unset($_SESSION['login']);
-    }
-    if (isset($_SESSION['registrationSuccess'])) { ?>
-    <div class="success show">
-        <span class="fas fa-exclamation-circle"></span>
-        <span class="msg"><?php echo $_SESSION['registrationSuccess']; ?></span>
-        <span class="close-btn">
-            <span class="fas fa-times"></span>
-        </span>
-    </div>
-    <?php
-    unset($_SESSION['registrationSuccess']);
-    }
-    ?>
-
     <div class="login-container">
         <div class="header">
             <h1>Jelentkezz be!</h1>

@@ -1,3 +1,14 @@
+<?php 
+session_start();
+$user;
+    
+if (!isset($_SESSION["user"])) {
+    header("Location: index.php");
+    die();
+} else {
+    $user = $_SESSION["user"];
+}
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -9,27 +20,7 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-<?php
-    $user;
-    include_once "common/header.php";
-    if (!isset($_SESSION["user"])) {
-        header("Location: index.php");
-        die();
-    } else {
-        $user = $_SESSION["user"];
-    }
-    if (isset($_SESSION["login"])) { ?>
-    <div class="success show">
-        <span class="fas fa-exclamation-circle"></span>
-        <span class="msg"><?php echo $_SESSION['login']; ?></span>
-        <span class="close-btn">
-            <span class="fas fa-times"></span>
-        </span>
-    </div>
-<?php
-    unset($_SESSION['login']);
-    }
-?>
+<?php include_once "common/header.php"; ?>
 <main>
     <div class="content">
         <div class="profile-container">

@@ -11,20 +11,25 @@ if(isset($_POST["submit"])) {
         !isset($_POST["password"]) || trim($_POST["password"]) === ""
     ) {
         $message = "A felhasználónév és jelszó megadása kötelező!";
+        $_SESSION['status'] = $message;
+            header("Location: http://localhost/index.php");
     } else {
         $username = strtolower(trim($_POST["username"]));
         $password = $_POST["password"];
 
         $message = "Sikertelen bejelentkezés! A felhasználónév vagy a jelszó nem megfelelő!";
 
+        if (!$user) {
+            $_SESSION['status'] = $message;
+            header("Location: http://localhost/index.php");
+        }
+
         foreach ($users as $user) {
             if ($user["username"] === $username && password_verify($password, $user["password"])) {
-                $message = "Sikeres belépés!";
                 $_SESSION["user"] = $user;
-                $_SESSION['login'] = $message;
                 header("Location: http://localhost/profile.php");
             } else {
-                $_SESSION['login'] = $message;
+                $_SESSION['status'] = $message;
                 header("Location: http://localhost/index.php");
             }
         }
