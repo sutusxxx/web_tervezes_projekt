@@ -32,11 +32,11 @@
             <div class="login-inputs">
                 <span>
                     <i class="fa fa-user"></i>
-                    <input type="text" placeholder="Felhasználónév" name="username" autocomplete="off" required>
+                    <input type="text" placeholder="Felhasználónév" name="username" autocomplete="off">
                 </span><br>
                 <span>
                     <i class="fa fa-lock"></i>
-                    <input type="password" placeholder="Jelszó" name="password" required>
+                    <input type="password" placeholder="Jelszó" name="password">
                 </span><br>
                 <button type="submit" name="submit" class="login-button">Bejelentkezés</button>
                 <lu class="registration-button"><li><a href="registration.php"><br>Regisztráció</a></li></lu>
