@@ -14,19 +14,43 @@ class User {
         $this->gender = $gender;
     }
 
-    public function getUsername() {
+    public function getUsername(): string {
         return $this->username;
     }
-    public function getPassword() {
+
+    public function setUsername(string $username): void {
+        $this->username = $username;
+    }
+
+    public function getPassword(): string {
         return $this->password;
     }
-    public function getEmail() {
+
+    public function setPassword(string $password): void {
+        $this->password = $password;
+    }
+
+    public function getEmail(): string {
         return $this->email;
     }
-    public function getDateOfBirth() {
+
+    public function setEmail(string $email): void {
+        $this->email = $email;
+    }
+
+    public function getDateOfBirth(): date {
         return $this->dateOfBirth;
     }
-    public function getGender() {
+
+    public function setDateOfBirth(string $dateOfBirth): void {
+        $this->dateOfBirth = $dateOfBirth;
+    }
+
+    public function getGender(): string {
         return $this->gender;
+    }
+
+    public function setGender(string $gender): void {
+        $this->gender = $gender;
     }
 }

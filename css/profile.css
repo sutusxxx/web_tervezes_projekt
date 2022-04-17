@@ -1,7 +1,7 @@
 .profile-container {
-    background-color: rgba(100, 35, 16, 0.5);
+    background-color: rgb(255, 208, 0);
     text-align: center;
-    padding: 40px 40px;
+    padding: 20px 40px;
     position: relative;
     border-radius: 20px;
     box-shadow: 0 0 15px #333;
@@ -19,7 +19,19 @@
     left: 50%;
     transform: translate(-50%);
     overflow: hidden;
-    border: 3px solid grey;
+    border: 3px solid rgb(192, 120, 13);
+}
+
+.upload-button {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 0;
+}
+
+.upload-button i {
+    cursor: pointer;
+    opacity: 1;
 }
 
 #file {
@@ -50,6 +62,7 @@
 }
 
 .edit-btn {
+    cursor: pointer;
     padding-left: 0;
     background-color: #333;
     letter-spacing: 1px;
@@ -71,9 +84,10 @@
 
 .profile-container h3 {
     letter-spacing: 1px;
-    margin-bottom: 40px;
-    font-weight: bold;
-    color: whitesmoke;
+    margin-bottom: 5px;
+    font-weight: bolder;
+    font-size: large;
+    color: rgb(0, 0, 0);
 }
 
 .profile-inputs span {
@@ -88,7 +102,6 @@
     margin-bottom: 20px;
     box-sizing: border-box;
     font-size: 15px;
-    color: #333;
 }
 
 .profile-inputs button {
@@ -101,6 +114,17 @@
 
 .delete-btn:hover {
     box-shadow: 2px 2px 5px rgb(36, 36, 36);
+}
+
+.edit-btn:hover {
+    box-shadow: 2px 2px 5px rgb(36, 36, 36);
+}
+
+.user-info {
+    color: #333;
+    font-size: small;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 800px) {

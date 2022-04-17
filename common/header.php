@@ -1,6 +1,5 @@
 <?php
     $page = basename($_SERVER['PHP_SELF']);
-    session_start();
 ?>
 <nav>
     <input type="checkbox" id="click">
