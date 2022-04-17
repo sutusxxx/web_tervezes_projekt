@@ -44,6 +44,31 @@ if (isset($_POST['upload']) && is_uploaded_file($_FILES["file"]["tmp_name"]) && 
     }
 }
 
+if (isset($_POST['edit'])) {
+    if (!isset($_POST['password']) ||
+        (!isset($_POST['newPassword']) || trim($_POST['newPassword']) === '') ||
+        (!isset($_POST['newPasswordConfirm']) || trim($_POST['newPasswordConfirm']) === '')
+    ) {
+        $errors[] = "A mezők kitöltése kötelező!";
+    }
+    $password = $_POST['password'];
+    $newPassword = $_POST['newPassword'];
+    $confirmPassword = $_POST['newPasswordConfirm'];
+    if ($newPassword !== $confirmPassword) {
+        $errors[] = "Az új jelszó és a jelszó megerősítése különbözik!";
+    }
+    if (!password_verify($password, $_SESSION['user']['password'])) {
+        $errors[] = "Nem megfelelő jelszó!";
+    }
+    if (password_verify($newPassword, $_SESSION['user']['password'])) {
+        $errors[] = "Az új jelszó nem egyezhet meg a régi jelszóval!";
+    }
+    validatePassword($newPassword, $errors);
+    if (count($errors) === 0) {
+        updateUserPassword($_SESSION['user']['username'], password_hash($newPassword, PASSWORD_DEFAULT));
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -78,6 +103,7 @@ if (isset($_POST['upload']) && is_uploaded_file($_FILES["file"]["tmp_name"]) && 
             <div class="user-info">
             <h3><?php echo strtoupper($user["username"]) ?></h3>
             <p><?php echo strtolower($user["email"])?></p>
+            <p><?php echo strtolower($user["date_of_birth"])?></p>
             <p>
             <?php 
             if (strtolower($user["gender"]) === 'm') {
@@ -94,12 +120,12 @@ if (isset($_POST['upload']) && is_uploaded_file($_FILES["file"]["tmp_name"]) && 
                         <input type="password" placeholder="Jelszó" name="password">
                     </span><br>
                     <span>
-                        <input type="password" placeholder="Új jelszó" name="NewPassword">
+                        <input type="password" placeholder="Új jelszó" name="newPassword">
                     </span><br>
                     <span>
-                        <input type="password" placeholder="Új jelszó megerősítése" name="NewPasswordConfirm">
+                        <input type="password" placeholder="Új jelszó megerősítése" name="newPasswordConfirm">
                     </span><br>
-                    <input type="submit" name="submit" class="edit-btn" value="Módosítás">
+                    <input type="submit" name="edit" class="edit-btn" value="Módosítás">
                 </form>
                 <form action="profile.php" method="GET">
                     <input type="submit" name="delete" class="delete-btn" value="Fiók törlése">

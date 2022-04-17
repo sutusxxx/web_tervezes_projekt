@@ -77,3 +77,23 @@ function uploadProfilePic(string $username, array &$errors) {
         }
     }
 }
+
+function validatePassword(string $password, array &$errors) {
+    if (strlen($password) < 8) {
+        $errors[] = "A jelszónak legalább 8 karakter hosszúnak kell lenni!";
+    }
+    if(!preg_match("/[a-z]/i", $password)){
+        $errors[] = "A jelszónak betűket és számokat is kell tartalmaznia!";
+    }
+    if(!preg_match("~[0-9]+~", $password)){
+        $errors[] = "A jelszónak betűket és számokat is kell tartalmaznia!";
+    }
+}
+
+function updateUserPassword(string $username, string $password) {
+    global $connection;
+    $query = "UPDATE users SET password=? WHERE username=?";
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("ss", $password, $username);
+    $result = $stmt->execute();
+}

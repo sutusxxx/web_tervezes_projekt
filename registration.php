@@ -37,6 +37,7 @@ if (isset($_POST['submit'])) {
     $dateOfBirth = $_POST['dateOfBirth'];
     $gender = $_POST['gender'];
     // $user = new User($username, $password, $email, $dateOfBirth, $gender);
+    validatePassword($password, $errors);
     $user = ['username' => $username, 'password' => password_hash($password, PASSWORD_DEFAULT), 'email' => $email, 'dateOfBirth' => $dateOfBirth, 'gender' => $gender];
     if (count($errors) === 0) {
         saveUser($user);

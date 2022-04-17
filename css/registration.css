@@ -29,6 +29,11 @@
     color: #333;
 }
 
+input:hover {
+    box-shadow: 2px 2px 5px #555;
+    background-color: #ddd;
+}
+
 .registration-button {
     cursor: pointer;
     padding-left: 0;
